@@ -1,0 +1,28 @@
+doctype html
+
+html(lang="en")
+ head
+   title=  pagetitle
+   link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css')
+ body
+    .header#content.jumbotron.text-center 
+      h1= pagetitle
+      p Welcome to #{pagetitle}
+    .section
+      .centerbox(style={width:'80%', padding:'10px', border:'3px solid green', margin:'auto'} onmouseenter='setRandomColor()')
+        p Mouse over me to change colors
+    .footer
+script.
+  function getRandomColor() {
+    var letters = '0123456789ABCDEF';
+    var color = '#';
+    for (var i = 0; i < 6; i++) {
+      color += letters[Math.floor(Math.random() * 16)];
+    }
+    return color;
+  }
+  function setRandomColor() {
+      //console.log(document.getElementsByClassName("centerbox")[0].style.backgroundColor)
+      document.getElementsByClassName("centerbox")[0].style.backgroundColor = '#'+(0x1000000+(Math.random())*0xffffff).toString(16).substr(1,6);
+    //document.getElementsByClassName("centerbox")[0].style.backgroundColor = setRandomColor();
+  }

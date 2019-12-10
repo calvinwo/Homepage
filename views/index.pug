@@ -1,0 +1,27 @@
+doctype html
+
+html(lang="en")
+ head
+   title=  pagetitle
+   link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css')
+ body
+    header#content.jumbotron.text-center 
+      h1= pagetitle
+      p Welcome to #{pagetitle}
+    section
+      .row  
+        .col-md-3
+          h3 Days
+        .col-md-9
+          h3 My projects and stuff.  Mostly incomplete.
+      .row
+        .col-md-3
+          a(href='/day2') Day 2
+        .col-md-9
+          p Playing around with pug and bootstrap
+      .row
+        .col-md-3
+          a(href='/') Day 1
+        .col-md-9
+          p Homepage
+    footer
