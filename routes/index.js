@@ -1,5 +1,6 @@
 var express = require('express');
 var router = express.Router();
+const requestIp = require('request-ip');
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
@@ -10,16 +11,14 @@ router.get('/', function(req, res, next) {
 .get('/day3', function(req, res, next) {
   var clientIPaddr = null,
   clientProxy = null;
-  
+  clientIPaddr = requestIp.getClientIp(req);
+
   // is client going through a proxy?
   if (req.headers['via']) { // yes
-    clientIPaddr = req.headers['x-forwarded-for'];
     clientProxy = req.headers['via'];
   } else { // no
-    clientIPaddr = req.connection.remoteAddress;
     clientProxy = "none";
   }
-
-  res.render('Day3/page', {pagetitle : "Client info", useragent: req.headers['user-agent'], ipaddress :  clientIPaddr, proxy : clientProxy});
+  res.render('Day3/page', {pagetitle : "Client info", useragent: JSON.stringify(req.headers), ipaddress :  clientIPaddr, proxy : clientProxy});
 });
 module.exports = router;

@@ -11,10 +11,7 @@ html(lang="en")
       .centerbox(style={width:'80%', padding:'10px', border:'3px solid green', margin:'auto'})
         p Info about the user
         p User agent : #{useragent}
-        p IP Address : #{clientIPaddr}
+        p IP Address : #{ipaddress}
         p Proxy : #{proxy}
     .footer
 script.
-  function setRandomColor() {
-      document.getElementsByClassName("centerbox")[0].style.backgroundColor = '#'+(0x1000000+(Math.random())*0xffffff).toString(16).substr(1,6);
-  }
