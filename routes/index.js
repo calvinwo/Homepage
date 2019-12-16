@@ -5,12 +5,13 @@ const requestIp = require('request-ip');
 /* GET home page. */
 router.get('/', function(req, res, next) {
   res.render('index', { pagetitle: 'Homepage' });
-}).get('/day2', function(req, res, next) {
+})
+.get('/day2', function(req, res, next) {
   res.render('Day2/page', {pagetitle: 'Messing around with pug'});
 })
 .get('/day3', function(req, res, next) {
   res.render('Day3/page', {
-    pagetitle : "Client info", 
+    pagetitle : "Getting client info", 
     headers: JSON.stringify(req.headers), 
     host : req.headers['host'] ? req.headers['host'] : "none",
     useragent: req.headers['user-agent'] ? req.headers['user-agent'] :"none", 
@@ -19,5 +20,9 @@ router.get('/', function(req, res, next) {
     encoding : req.headers['accept-encoding'] ? req.headers['accept-encoding'] :"none",
     referer : req.headers['referer'] ? req.headers['referer'] :"none",
     proxy : req.headers['via'] ? req.headers['via'] : "none"});
+})
+.get('/day4', function(req, res, next) {
+  res.render('Day4/page', {
+    pagetitle : "Base 64 Encoder/Decoder"});
 });
 module.exports = router;

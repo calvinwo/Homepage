@@ -6,27 +6,32 @@ html(lang="en")
    link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css')
  body
     header#content.jumbotron.text-center 
-      h1= pagetitle
-      p Welcome to #{pagetitle}
+      h1 Welcome to my homepage
     section
-      .row  
-        .col-md-3
-          h3 Days
-        .col-md-9
-          h3 My projects and stuff.  Mostly incomplete.
-      .row
-        .col-md-3
-          a(href='/day3') Day 3
-        .col-md-9
-          p Attempting node stuff
-      .row
-        .col-md-3
-          a(href='/day2') Day 2
-        .col-md-9
-          p Playing around with pug and bootstrap
-      .row
-        .col-md-3
-          a(href='/') Day 1
-        .col-md-9
-          p Homepage
+      .centerbox(style={width:'80%', padding:'10px', border:'3px solid green', margin:'auto'})
+        .row  
+          .col-md-3
+            h3 Days
+          .col-md-9
+            h3 My daily projects and stuff.  Mostly incomplete.
+        .row
+          .col-md-3
+            a(href='/day4') Day 4
+          .col-md-9
+            p Base64 encoder/decoder
+        .row
+          .col-md-3
+            a(href='/day3') Day 3
+          .col-md-9
+            p Getting client information
+        .row
+          .col-md-3
+            a(href='/day2') Day 2
+          .col-md-9
+            p Mouse over color change
+        .row
+          .col-md-3
+            a(href='/') Day 1
+          .col-md-9
+            p Homepage
     footer

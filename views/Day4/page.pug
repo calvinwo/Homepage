@@ -1,0 +1,27 @@
+doctype html
+
+html(lang="en")
+ head
+   title= pagetitle
+   link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css')
+   script(src='/javascripts/functions.js')
+ body
+    .header#content.jumbotron.text-center 
+      h1= pagetitle
+    .section
+      .centerbox(style={width:'80%', padding:'10px', border:'3px solid green', margin:'auto'})
+        .inputbox
+          textarea(id="inputtext", cols="60", rows="10")
+          br
+          button(type="button", onclick="EncodeText()") Encode
+          button(type="button", onclick="DecodeText()") Decode
+    .footer
+script.
+  function EncodeText()
+  {
+    document.getElementById("inputtext").value = encode(document.getElementById("inputtext").value);
+  }
+  function DecodeText()
+  {
+    document.getElementById("inputtext").value = decode(document.getElementById("inputtext").value);
+  }
